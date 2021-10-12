@@ -1,0 +1,94 @@
+package com.itschool;
+
+import java.math.BigDecimal;
+import java.util.Scanner;
+import java.lang.*;
+
+import static java.awt.PageAttributes.MediaType.B2;
+import static java.lang.Math.sin;
+
+public class Main {
+
+    public static void main(String[] args)  throws java.lang.Exception {
+        // write your code here
+        // b = 4х*3 - 12y
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("введите значение x");
+        double x = sc.nextDouble();
+        System.out.println("введите значение y");
+        double y = sc.nextDouble();
+        System.out.println("b = 4х*3 - 12y");
+        System.out.println(4 * Math.pow(x, 3) - y * 12);
+        System.out.println("c = sin(х*(-3 + 2y) + 1)");
+        System.out.println(sin(x * (-3 + 2 * y) + 1));
+        //d = 122х-2
+        System.out.println("d = 122х-2");
+        System.out.println(122 * Math.pow(x, -2));
+        // e = х4*|485 - 179y|
+        System.out.println("e = х4*|485 - 179y|");
+        System.out.println((long) Math.pow(x, (Math.abs(485 - 179 * y))));
+        //f = 3 + 9х - 5/х - 1
+        System.out.println("f = 3 + 9х - 5/х - 1");
+        System.out.println(3 + Math.pow(9, x) - (5 / x) - 1);
+        //g = (2,5*(4 - 6х) -5
+        System.out.println("g = (2,5*(4 - 6х) -5");
+        System.out.println(2.5 * (4 - 6 * x) - 5);
+        //h = cos(x/2) + sin(x/4) + 3x/6
+        System.out.println("h = cos(x/2) + sin(x/4) + 3x/6");
+        System.out.println(Math.cos(x / 2) + Math.sin(x / 4) + (3 * x) / 6);
+        //y = |5x - 3/x2 + 6 + 7x3 - 12|
+        System.out.println("|5x - 3/x2 + 6 + 7x3 - 12|");
+        System.out.println(Math.abs(5 * x - 3 / (2 * x) + 6 + 7 * x * 3 - 12));
+
+        String[] arr = {"░▄█▀▀█▄░░░░░░░░█▀▀▀█░",
+"█▀░░░░█░░░░░░░█▀░░░▀█",
+"█░░░░░█▄░░░░░░█░░░░░█",
+"█░░░░░██░░░░░▄█░░░░░█",
+"██░▄▄░▀█░░░░░██░▄▄░░█",
+"▀█░███▄█░░░░░█████░██",
+"░█▄█████░░░░░█████▄█░",
+"░░██████░░░░░██████░░",
+"░░██████▀▀▀▀▀██████░░",
+"░░▄█▀▀░░░░░░░░░▀▀█▄░░",
+"░▄█░░▄▄▄░░░░░▄▄▄░░█▄░",
+"░█░░███░▀▄░░███░▀▄░█░",
+"██░░█▀███▀░░█▀████░██",
+"██░░░▀▀▀▀░░░░▀▀▀▀░░██",
+"░█░░░░░░░▀█▀░░░░░░░█░",
+"░▀█▄░░░░▀███▀░░░░▄█▀░",
+"░░░▀█▄░░░░░░░░░▄█▀░░░",
+"░░░░░▀▀██▄▄▄██▀▀░░░░░",
+"░░░░░░-=BUNNY=-░░░░░░",
+        };
+        for(String s : arr){
+            System.out.println(s);
+    }
+        // Общая формула для вычисления корней
+        // Вычислить значение дискриминанта квадратного уравнения: дискриминантом уравнения a x 2 + b x + c = 0
+        //называется выражение D=b^{2}-4ac.
+    System.out.println("введите значение а");
+        double a = sc.nextDouble();
+        System.out.println("введите значение b");
+        double b = sc.nextDouble();
+        System.out.println("введите значение c");
+        double c = sc.nextDouble();
+
+        double discriminant = b*b - 4 * a * c; // формула нахождение дискриминанта
+        if (discriminant > 0) {                // если дискриминант больше ноля
+            double x1, x2;
+            x1 = (-b - Math.sqrt(discriminant)) / (2 * a);
+            x2 = (-b + Math.sqrt(discriminant)) / (2 * a);
+            System.out.println("Корни уравнения: x1 = " + x1 + ", x2 = " + x2);
+        }
+        else if (discriminant == 0) { // если дискриминант равен 0
+            double g;
+            g = -b / (2 * a);
+            System.out.println("Уравнение имеет единственный корень: x = " + g);
+        }
+        else { // если не верно первое и второе условие , дискриминант меньше 0
+            System.out.println("Уравнение не имеет корней ");
+        }
+    }
+
+}
